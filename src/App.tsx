@@ -173,10 +173,10 @@ const App:React.FC = () => {
         <div className='text-start mt-3 overflow-x-scroll overflow-y-hidden w-full font-medium'>{firstNumEntered}</div>
         {/* <div>Second: {secondNumEntered}</div> */}
         <div className='text-6xl my-1 font-black w-full overflow-x-scroll overflow-y-hidden text-end'>
-            {symbol === "+" ? Math.round(parseInt(firstNumEntered) + parseInt(secondNumEntered) * 1000)/1000 
-            : (symbol === "-"?  Math.round(parseInt(firstNumEntered) - parseInt(secondNumEntered) * 1000)/1000 
-            : (symbol === "x"? Math.round(parseInt(firstNumEntered) * parseInt(secondNumEntered) * 1000)/1000 
-            : (symbol === "/" ? Math.round(parseInt(firstNumEntered) / parseInt(secondNumEntered) * 1000)/1000 
+            {symbol === "+" ? Math.round((parseInt(firstNumEntered) + parseInt(secondNumEntered)) * 1000)/1000 
+            : (symbol === "-"?  Math.round((parseInt(firstNumEntered) - parseInt(secondNumEntered)) * 1000)/1000 
+            : (symbol === "x"? Math.round((parseInt(firstNumEntered) * parseInt(secondNumEntered)) * 1000)/1000 
+            : (symbol === "/" ? Math.round((parseInt(firstNumEntered) / parseInt(secondNumEntered)) * 1000)/1000 
             : (symbol === "="? totalNumb
             : (symbol === "AC"? "0": "0")))))}
         </div>

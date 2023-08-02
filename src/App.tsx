@@ -42,28 +42,28 @@ const App:React.FC = () => {
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) + parseInt(update) *1000)/1000)
+            setTotalNumb(Math.round((parseInt(firstNumEntered.split(" ")[0]) + parseInt(update)) *1000)/1000)
             return update
           })
       } else if (firstNumEntered.includes(" - ")){
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) - parseInt(update) *1000)/1000)
+            setTotalNumb(Math.round((parseInt(firstNumEntered.split(" ")[0]) - parseInt(update)) *1000)/1000)
             return update
           })
       } else if (firstNumEntered.includes(" x ")){
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) * parseInt(update) *1000)/1000)
+            setTotalNumb(Math.round((parseInt(firstNumEntered.split(" ")[0]) * parseInt(update)) *1000)/1000)
             return update
           })
       } else if (firstNumEntered.includes(" / ")){
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) / parseInt(update) *1000)/1000)
+            setTotalNumb(Math.round((parseInt(firstNumEntered.split(" ")[0]) / parseInt(update)) *1000)/1000)
             return update
           })
       }

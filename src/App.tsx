@@ -25,8 +25,11 @@ const App:React.FC = () => {
     {
       symbol: "/"
     },
+    // {
+    //   symbol: "=",
+    // },
     {
-      symbol: "=",
+      symbol: "AC"
     }
 
   ])
@@ -39,28 +42,28 @@ const App:React.FC = () => {
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(parseInt(firstNumEntered.split(" ")[0]) + parseInt(update))
+            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) + parseInt(update) *1000)/1000)
             return update
           })
       } else if (firstNumEntered.includes(" - ")){
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(parseInt(firstNumEntered.split(" ")[0]) - parseInt(update))
+            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) - parseInt(update) *1000)/1000)
             return update
           })
       } else if (firstNumEntered.includes(" x ")){
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(parseInt(firstNumEntered.split(" ")[0]) * parseInt(update))
+            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) * parseInt(update) *1000)/1000)
             return update
           })
       } else if (firstNumEntered.includes(" / ")){
           // If includes operator set secondNumberEntered
           setSecondNumEntered((prev:any) => {
             const update = secondNumEntered? prev + index.toString() : index.toString()
-            setTotalNumb(parseInt(firstNumEntered.split(" ")[0]) / parseInt(update))
+            setTotalNumb(Math.round(parseInt(firstNumEntered.split(" ")[0]) / parseInt(update) *1000)/1000)
             return update
           })
       }
@@ -150,6 +153,11 @@ const App:React.FC = () => {
                     setSecondNumEntered("")
                   }
                   return
+            case "AC":
+                  setSecondNumEntered("")
+                  setSymbol("")
+                  setFirstNumEntered("")
+                  setTotalNumb(0)
         }
 
     }
@@ -161,15 +169,16 @@ const App:React.FC = () => {
     <div className="App h-screen" style={{height: "100dvh",}}>
       <div className='h-full items-center flex flex-col p-2 bg-zinc-200'>
         <div className='text-left font-black'>DumbNumbs</div>
-      <div className='flex justify-between h-1/5 items-center w-full px-5 text-4xl font-extrabold text-zinc-800 bg-gradient-to-bl  from-stone-400 to-stone-600 shadow-inner shadow-black rounded m-2 mx-2'>
-        <div>{firstNumEntered}</div>
+      <div className='flex flex-col justify-between h-1/5 items-center w-full px-5 text-4xl font-extrabold text-zinc-800 bg-gradient-to-bl  from-stone-400 to-stone-600 shadow-inner shadow-black rounded m-2 mx-2'>
+        <div className='text-start my-1 overflow-x-scroll overflow-y-hidden w-full font-medium'>{firstNumEntered}</div>
         {/* <div>Second: {secondNumEntered}</div> */}
-        <div className='text-6xl font-black overflow-hidden w-1/2 truncate text-end'>
-            {symbol === "+" ? ((parseInt(firstNumEntered) + parseInt(secondNumEntered)) )
-            : (symbol === "-"?  parseInt(firstNumEntered) - parseInt(secondNumEntered) 
-            : (symbol === "x"? parseInt(firstNumEntered) * parseInt(secondNumEntered)
-            : (symbol === "/" ? parseInt(firstNumEntered) / parseInt(secondNumEntered)
-            : (symbol === "="? totalNumb:"0"))))}
+        <div className='text-6xl my-1 font-black w-full overflow-x-scroll overflow-y-hidden text-end'>
+            {symbol === "+" ? Math.round(parseInt(firstNumEntered) + parseInt(secondNumEntered) * 1000)/1000 
+            : (symbol === "-"?  Math.round(parseInt(firstNumEntered) - parseInt(secondNumEntered) * 1000)/1000 
+            : (symbol === "x"? Math.round(parseInt(firstNumEntered) * parseInt(secondNumEntered) * 1000)/1000 
+            : (symbol === "/" ? Math.round(parseInt(firstNumEntered) / parseInt(secondNumEntered) * 1000)/1000 
+            : (symbol === "="? totalNumb
+            : (symbol === "AC"? "0": "0")))))}
         </div>
       </div>
       {/* <InputField/> */}
@@ -188,7 +197,8 @@ const App:React.FC = () => {
           )
         }
       </div>
-      <Result/>
+      {/* <Result/> */}
+      <div className='text-center font-bold text-sm text-zinc-500 my-1'>withLove_Victor</div>
       </div>
     </div>
   );

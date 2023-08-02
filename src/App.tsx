@@ -170,7 +170,7 @@ const App:React.FC = () => {
       <div className='h-full items-center flex flex-col p-2 bg-zinc-200'>
         <div className='text-left font-black'>DumbNumbs</div>
       <div className='flex flex-col justify-between h-1/5 items-center w-full px-5 text-4xl font-extrabold text-zinc-800 bg-gradient-to-bl  from-stone-400 to-stone-600 shadow-inner shadow-black rounded m-2 mx-2'>
-        <div className='text-start my-1 overflow-x-scroll overflow-y-hidden w-full font-medium'>{firstNumEntered}</div>
+        <div className='text-start mt-3 overflow-x-scroll overflow-y-hidden w-full font-medium'>{firstNumEntered}</div>
         {/* <div>Second: {secondNumEntered}</div> */}
         <div className='text-6xl my-1 font-black w-full overflow-x-scroll overflow-y-hidden text-end'>
             {symbol === "+" ? Math.round(parseInt(firstNumEntered) + parseInt(secondNumEntered) * 1000)/1000 

@@ -14,7 +14,7 @@ const Units: React.FC<Props> = ({unit, index, returnValue}) => {
 
     return (
         <div onClick={handleClick} className='w-full h-full contents'>
-            <div className='text-zinc-300 text-3xl font-extrabold w-full h-full contents'>{unit}</div>
+            <div className='text-zinc-500 text-3xl font-extrabold w-full h-full contents'>{unit}</div>
         </div>
     )
 }

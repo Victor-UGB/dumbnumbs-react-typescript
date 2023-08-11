@@ -25,7 +25,7 @@ const Digits:React.FC<Props> = ({numbers, returnVal}) => {
     return (
         <>
             {numbers.map((num:number, index:number) => 
-                <div className='bg-zinc-800 p-2 m-2 items-center flex justify-around rounded-3xl hover:shadow-inner hover:scale-90 transition-all ease-in-out'>
+                <div className='bg-zinc-700 p-2 m-2 items-center flex justify-around rounded-3xl hover:shadow-inner hover:scale-90 transition-all ease-in-out'>
                     <Units
                         key={index}
                         unit={index}

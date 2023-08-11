@@ -7,7 +7,7 @@ interface Props {
 const Operator:React.FC<Props> = ({symbol, operation }) => {
     return (
         <div onClick={operation}>
-            <div>{symbol}</div>
+            <div className='text-2xl'>{symbol}</div>
         </div>
     )
 }

@@ -167,11 +167,9 @@ const App:React.FC = () => {
 
   return (
     <div className="App h-screen" style={{height: "100dvh",}}>
-      <div className='h-full items-center flex flex-col p-2 bg-zinc-200'>
-        <div className='text-left font-black'>DumbNumbs</div>
-      <div className='flex flex-col justify-between h-1/5 items-center w-full px-5 text-4xl font-extrabold text-zinc-800 bg-gradient-to-bl  from-stone-400 to-stone-600 shadow-inner shadow-black rounded m-2 mx-2'>
+      <div className='h-full items-center flex flex-col p-2 bg-zinc-900'>
+      {/* <div className='flex flex-col justify-between h-2/5 items-center w-full px-5 text-4xl font-extrabold text-zinc-800 bg-gradient-to-bl  from-stone-400 to-stone-600 shadow-inner shadow-black rounded m-4'>
         <div className='text-start mt-3 overflow-x-scroll overflow-y-hidden w-full font-medium'>{firstNumEntered}</div>
-        {/* <div>Second: {secondNumEntered}</div> */}
         <div className='text-6xl my-1 font-black w-full overflow-x-scroll overflow-y-hidden text-end'>
             {symbol === "+" ? Math.round((parseInt(firstNumEntered) + parseInt(secondNumEntered)) * 1000)/1000 
             : (symbol === "-"?  Math.round((parseInt(firstNumEntered) - parseInt(secondNumEntered)) * 1000)/1000 
@@ -180,22 +178,45 @@ const App:React.FC = () => {
             : (symbol === "="? totalNumb
             : (symbol === "AC"? "0": "0")))))}
         </div>
+      </div> */}
+      <div className='flex flex-col justify-between h-2/5 items-center w-full px-5 text-xl font-extrabold text-zinc-700 inner shadow-black rounded m-4'>
+        <div className='text-left font-black'>DumbNumbs</div>
+        <div className=' my-1 font-black w-full self-center overflow-x-scroll overflow-y-hidden text-end'>
+            <div className='mt-3 pb-3 overflow-x-scroll text-3xl overflow-y-hidden text-end text-zinc-400 w-full font-light'>{firstNumEntered}</div>
+            <div className='text-6xl py-6'> 
+              {symbol === "+" ? `= ${Math.round((parseInt(firstNumEntered) + parseInt(secondNumEntered)) * 1000)/1000} `
+            : (symbol === "-"?  `= ${Math.round((parseInt(firstNumEntered) - parseInt(secondNumEntered)) * 1000)/1000} `
+            : (symbol === "x"? `= ${Math.round((parseInt(firstNumEntered) * parseInt(secondNumEntered)) * 1000)/1000} `
+            : (symbol === "/" ? `= ${Math.round((parseInt(firstNumEntered) / parseInt(secondNumEntered)) * 1000)/1000} `
+            : (symbol === "="? totalNumb
+            : (symbol === "AC"? "0": "0")))))}
+            </div>
+        </div>
       </div>
-      {/* <InputField/> */}
-      <div className='w-full h-full grid grid-cols-3 m-auto pointer'>
-      <Digits
-        numbers={[...Array(10)]}
-        returnVal={returnValue}
-      />
-      {
+      
+      <div className='flex w-full h-3/5 p-2'>
+        <div className='basis-4/5 w-full h-full grid grid-cols-3 m-auto pointer'>
+          <Digits
+            numbers={[...Array(10)]}
+            returnVal={returnValue}
+          />
+          <Digits
+            numbers={[0]}
+            returnVal={returnValue}
+          />
+
+        </div>
+      <div className='basis-1/5 justify-between h-full flex flex-col h-full m-2 pb-2'>
+        {
           operators.map(op => 
             
-          <div className= {op === operators[4]?  'bg-green-700 font-extrabold text-zinc-100 p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 shadow-lg shadow-zinc-600 border-4 border-r-zinc-600 border-b-zinc-600 transition-all ease-in-out'
-          : 'bg-zinc-800 font-extrabold text-zinc-100 p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 shadow-lg shadow-zinc-600 border-4 border-r-zinc-600 border-b-zinc-600 transition-all ease-in-out' }>
+          <div className= {op === operators[4]?  'bg-blue-500 h-full font-extrabold text-zinc-100 p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 transition-all ease-in-out'
+          : 'bg-zinc-800 font-extrabold text-zinc-100 h-full p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 transition-all ease-in-out' }>
             <Operator symbol={op.symbol} operation={() => dispatch({type: op.symbol})}/>
           </div>
           )
         }
+      </div>
       </div>
       {/* <Result/> */}
       <div className='text-center font-bold text-sm text-zinc-500 my-1'>withLove_Victor</div>

@@ -167,7 +167,7 @@ const App:React.FC = () => {
 
   return (
     <div className="App h-screen p-4" style={{height: "100dvh", borderRadius: '3rem'}}>
-      <div className='h-full items-center flex flex-col p-2 bg-gradient-to-br from-black to-zinc-800 rounded-3xl'>
+      <div className='h-full items-center flex flex-col p-2 bg-gradient-to-br from-zinc-900 to-black rounded-3xl'>
       {/* <div className='flex flex-col justify-between h-2/5 items-center w-full px-5 text-4xl font-extrabold text-zinc-800 bg-gradient-to-bl  from-stone-400 to-stone-600 shadow-inner shadow-black rounded m-4'>
         <div className='text-start mt-3 overflow-x-scroll overflow-y-hidden w-full font-medium'>{firstNumEntered}</div>
         <div className='text-6xl my-1 font-black w-full overflow-x-scroll overflow-y-hidden text-end'>

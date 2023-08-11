@@ -179,7 +179,7 @@ const App:React.FC = () => {
             : (symbol === "AC"? "0": "0")))))}
         </div>
       </div> */}
-      <div className='flex flex-col justify-between h-2/5 items-center w-full px-5 text-xl font-extrabold text-zinc-700 inner shadow-black rounded m-4'>
+      <div className='flex flex-col justify-between h-2/5 items-center w-full px-5 text-xl font-extrabold text-zinc-800 inner shadow-black rounded m-4'>
         <div className='text-left font-black'>DumbNumbs</div>
         <div className=' my-1 font-black w-full self-center overflow-x-scroll overflow-y-hidden text-end'>
             <div className='mt-3 pb-3 overflow-x-scroll text-3xl overflow-y-hidden text-end text-zinc-400 w-full font-light'>{firstNumEntered}</div>
@@ -211,7 +211,7 @@ const App:React.FC = () => {
           operators.map(op => 
             
           <div className= {op === operators[4]?  'bg-blue-600 col-span-2 h-full font-extrabold text-zinc-100 p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 transition-all ease-in-out'
-          : 'bg-zinc-800 font-extrabold text-zinc-100 p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 transition-all ease-in-out' }>
+          : 'bg-zinc-900 font-extrabold text-zinc-100 p-2 m-2 items-center flex justify-around rounded-xl hover:shadow-inner hover:scale-95 transition-all ease-in-out' }>
             <Operator symbol={op.symbol} operation={() => dispatch({type: op.symbol})}/>
           </div>
           )

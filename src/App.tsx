@@ -167,7 +167,7 @@ const App:React.FC = () => {
 
   return (
     <div className="App bg-gradient-to-br from-zinc-900 to-black" >
-      <div className='h-full items-center flex flex-col p-2 pb-4' style={{maxHeight: "100dvh", height: "100dvh", borderRadius: ''}}>
+      <div className='h-full items-center flex flex-col p-2 pb-8' style={{maxHeight: "100dvh", height: "100dvh", borderRadius: ''}}>
         <div className='flex flex-col justify-between h-2/5 items-center w-full px-5 text-xl font-extrabold text-zinc-800 inner shadow-black rounded m-4'>
           <div className='text-left font-black'>DumbNumbs</div>
           <div className=' my-1 font-black w-full self-center overflow-x-scroll overflow-y-hidden text-end'>
